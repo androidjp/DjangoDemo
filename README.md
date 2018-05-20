@@ -50,6 +50,30 @@
 
 > Django项目特点：在 Django 中，每一个应用都是一个 Python 包，并且遵循着相同的约定。Django 自带一个工具，可以帮你生成应用的基础目录结构，这样你就能专心写代码，而不是创建目录了。
 
+## 数据库配置
+在你项目目录的`settings.py`中，配置者整个Django项目的设置，其中包括Database
+
+配置步骤：
+1. 安装合适的database bindings（或者直接使用默认的sqlite3）
+2. 更改`DATABASES'default'`中的键值：
+  * `ENGINE`
+    * `django.db.backends.sqlite3`
+    * `django.db.backends.postgresql`
+    * `django.db.backends.mysql`
+    * `django.db.backends.oracle`
+  * `NAME`
+    * 数据库名称，`默认值 os.path.join(BASE_DIR, 'db.sqlite3')` 将会把数据库文件储存在项目的根目录
+  * `USER`,`PASSWORD`,`HOST`等可选的配置
+
+
+
+
+
+
+
+## 请求和页面跳转
+
+
 
 
 ## 参考文章
