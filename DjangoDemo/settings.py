@@ -73,11 +73,19 @@ WSGI_APPLICATION = 'DjangoDemo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
+# 数据库配置：https://blog.csdn.net/songfreeman/article/details/70229839
+# Mongo 配置：http://django-mongodb-engine.readthedocs.io/en/latest/topics/setup.html
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'db_oracle': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': os.path.join(BASE_DIR, 'db_mongo'),
+    },
+    'db_mongo': {
+        'ENGINE': 'django.db.backends.mongo'
     }
 }
 
