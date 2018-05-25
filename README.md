@@ -73,8 +73,36 @@
 
 ## 请求和页面跳转
 
+## 多数据库连接
+* 配置MongoDB环境
+  1. 安装Django-nonrel
+    `pip install git+https://github.com/django-nonrel/django@nonrel-1.5`
+  2. 安装djangotoolbox
+    `pip install git+https://github.com/django-nonrel/djangotoolbox`
+  3. 安装 Django MongoDB Engine
+    `pip install git+https://github.com/django-nonrel/mongodb-engine`
+  4. 配置settings.py文件
+    ```
+    DATABASES = {
+    'default' : {
+      'ENGINE' : 'django_mongodb_engine',
+       'NAME' : 'my_database'
+      }
+    }
+    ```
+
+## 采坑集
+* 在跑`python manage.py test`时遇到这种和migrate有关的找不到db的问题
+  ![](./img/issue_1.png)
+  步骤：
+  1. 先run `manage.py makemigrations`
+  2. 后run `python manage.py migrate`
+  3. 最后run `python manage.py test` 就OK了
 
 
 
 ## 参考文章
 [Django官方文档](https://docs.djangoproject.com/zh-hans/2.0/intro/tutorial01/)
+[如何进行多数据库环境配置](https://blog.csdn.net/songfreeman/article/details/70229839)
+[django-mongo-engine插件安装(配合上面的步骤，发现不支持Python3)](http://django-mongodb-engine.readthedocs.io/en/latest/topics/setup.html)
+[django 单元测试](https://www.jianshu.com/p/34267dd79ad6)
