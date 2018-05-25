@@ -4,7 +4,7 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import UserModel
+from .dao.dao_pymongo import UserModel
 
 userModel = UserModel()
 

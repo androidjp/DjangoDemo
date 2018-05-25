@@ -1,9 +1,8 @@
 # encoding=utf-8
 import re
-from .db_connection.pymongo_util import pyMongoConnection
+from ..db_connection.pymongo_util import pyMongoConnection
 
 pattern = re.compile(r'^_[\w,\d]*$')
-
 
 class PyMongoModel:
     def __init__(self, collectionObj) -> None:
@@ -21,9 +20,7 @@ class PyMongoModel:
     def findAll(self):
         cursor = self.collectionObj.find()
         resultArr = []
-        # item's type is dict
         for item in cursor:
-            # resDict = dict(map(lambda key,value: pattern.match(key) is not None, item))
             res = item.copy()
             for key in item:
                 if pattern.match(key) is not None:
@@ -41,3 +38,4 @@ class UserModel(PyMongoModel):
 class NoteModel(PyMongoModel):
     def __init__(self):
         super().__init__(pyMongoConnection.getDBCollection("notebookDB", "NOTE"))
+
