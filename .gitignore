@@ -105,5 +105,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# IDEA
-.idea
+#IntelliJ IDEA
+*.iml
+*/*.iml
+*/.idea/
+.idea/

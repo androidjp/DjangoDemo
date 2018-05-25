@@ -98,11 +98,17 @@
   1. 先run `manage.py makemigrations`
   2. 后run `python manage.py migrate`
   3. 最后run `python manage.py test` 就OK了
+* 在POST请求时，出现403 拒绝访问的情况
+  ![](./img/issue_2.png)
+  步骤：
+  1. 导入：`from django.views.decorators.csrf import csrf_exempt`
+  2. 在对应的服务端方法头上加上注解：`@csrf_exempt`
 
 
 
 ## 参考文章
-[Django官方文档](https://docs.djangoproject.com/zh-hans/2.0/intro/tutorial01/)
-[如何进行多数据库环境配置](https://blog.csdn.net/songfreeman/article/details/70229839)
-[django-mongo-engine插件安装(配合上面的步骤，发现不支持Python3)](http://django-mongodb-engine.readthedocs.io/en/latest/topics/setup.html)
-[django 单元测试](https://www.jianshu.com/p/34267dd79ad6)
+* [Django官方文档](https://docs.djangoproject.com/zh-hans/2.0/intro/tutorial01/)
+* [如何进行多数据库环境配置](https://blog.csdn.net/songfreeman/article/details/70229839)
+* [django-mongo-engine插件安装(配合上面的步骤，发现不支持Python3)](http://django-mongodb-engine.readthedocs.io/en/latest/topics/setup.html)
+* [django 单元测试](https://www.jianshu.com/p/34267dd79ad6)
+* [Python json与Object转换](https://blog.csdn.net/tterminator/article/details/63289400)
