@@ -1,11 +1,11 @@
 # encoding=utf-8
 import re
-from .db_connection.db_connection_utils import PyMongoConnectionUtil
+from .db_connection.pymongo_util import pyMongoConnection
 
 pattern = re.compile(r'^_[\w,\d]*$')
 
 
-class PyMongoModel():
+class PyMongoModel:
     def __init__(self, collectionObj) -> None:
         self.collectionObj = collectionObj
 
@@ -35,9 +35,9 @@ class PyMongoModel():
 
 class UserModel(PyMongoModel):
     def __init__(self):
-        super().__init__(PyMongoConnectionUtil.getDBConnection().USER)
+        super().__init__(pyMongoConnection.getDBCollection("notebookDB", "USER"))
 
 
 class NoteModel(PyMongoModel):
     def __init__(self):
-        super().__init__(PyMongoConnectionUtil.getDBConnection().NOTE)
+        super().__init__(pyMongoConnection.getDBCollection("notebookDB", "NOTE"))

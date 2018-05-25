@@ -112,3 +112,4 @@
 * [django-mongo-engine插件安装(配合上面的步骤，发现不支持Python3)](http://django-mongodb-engine.readthedocs.io/en/latest/topics/setup.html)
 * [django 单元测试](https://www.jianshu.com/p/34267dd79ad6)
 * [Python json与Object转换](https://blog.csdn.net/tterminator/article/details/63289400)
+* [Python 单例模式写法](https://www.cnblogs.com/huchong/p/8244279.html)
