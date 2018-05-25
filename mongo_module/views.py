@@ -17,6 +17,8 @@ def checkAllUsers(request):
     userList = userModel.findAll()
     return JsonResponse(userList, safe=False)
 
+def searchUser(request, user_id):
+    return JsonResponse(userModel.findUserByPhoneNumOrEmail(user_id), safe=False)
 
 @csrf_exempt
 def register(request):
