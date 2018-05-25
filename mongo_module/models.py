@@ -1,15 +1,8 @@
 # encoding=utf-8
 import re
-
-import pymongo
-
-# 1. 建立连接，获取客户端对象
+from .db_connection.db_connection_utils import PyMongoConnectionUtil
 
 pattern = re.compile(r'^_[\w,\d]*$')
-
-mongo_client = pymongo.MongoClient('localhost', 27017)
-# 2. 获取数据库对象
-db = mongo_client.notebookDB
 
 
 class PyMongoModel():
@@ -42,13 +35,9 @@ class PyMongoModel():
 
 class UserModel(PyMongoModel):
     def __init__(self):
-        super().__init__(db.USER)
-
-    pass
+        super().__init__(PyMongoConnectionUtil.getDBConnection().USER)
 
 
 class NoteModel(PyMongoModel):
     def __init__(self):
-        super().__init__(db.NOTE)
-
-    pass
+        super().__init__(PyMongoConnectionUtil.getDBConnection().NOTE)
