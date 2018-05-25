@@ -49,27 +49,6 @@ class UserModel(PyMongoModel):
 
 class NoteModel(PyMongoModel):
     def __init__(self):
-        super().__init__(db.note)
+        super().__init__(db.NOTE)
 
     pass
-
-# class User(models.Model):
-#     phone_number = models.CharField(max_length=15, primary_key=True)
-#     email_address = models.CharField(max_length=30)
-#     nick_name = models.CharField(max_length=20)
-#     password = models.CharField(max_length=16)
-#     create_time = models.DateTimeField('user create date')
-#
-#     def __str__(self):
-#         return 'User : ' + self.nick_name
-#
-#
-# class Note(models.Model):
-#     title = models.CharField(max_length=40)
-#     content = models.CharField()
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     update_date = models.DateTimeField('date update note')
-#     create_date = models.DateTimeField('date create note')
-#
-#     def __str__(self):
-#         return self.title + ":" + self.content
