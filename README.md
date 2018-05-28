@@ -103,7 +103,10 @@
   步骤：
   1. 导入：`from django.views.decorators.csrf import csrf_exempt`
   2. 在对应的服务端方法头上加上注解：`@csrf_exempt`
-
+* 注意：在使用Oracle数据库时，要:
+  1. 先保证`pip install cx_Oracle`
+  2. 保证有64位并且版本大于等于11.2的 `instantclient-basic` 并配置好了环境变量（将其目录扔到`Path`中）
+  3. 重启Oracle 和 PyCharm
 
 
 ## 参考文章
@@ -113,3 +116,4 @@
 * [django 单元测试](https://www.jianshu.com/p/34267dd79ad6)
 * [Python json与Object转换](https://blog.csdn.net/tterminator/article/details/63289400)
 * [Python 单例模式写法](https://www.cnblogs.com/huchong/p/8244279.html)
+* [Oracle安装配置相关问题：找不到cx_Oracle](https://blog.csdn.net/laodengbaiwe0838/article/details/52895010)

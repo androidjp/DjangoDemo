@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
     path('mongo_module/', include('mongo_module.urls')),
+    path('oracle_module/', include('oracle_module.urls')),
 ]
