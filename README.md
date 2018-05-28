@@ -74,7 +74,7 @@
 ## 请求和页面跳转
 
 ## 多数据库连接
-* 配置MongoDB环境
+* 配置MongoDB环境[这个后来验证了不靠谱]
   1. 安装Django-nonrel
     `pip install git+https://github.com/django-nonrel/django@nonrel-1.5`
   2. 安装djangotoolbox

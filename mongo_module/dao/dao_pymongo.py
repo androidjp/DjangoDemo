@@ -6,7 +6,7 @@ from ..db_connection.pymongo_util import pyMongoConnection
 pattern = re.compile(r'^_[\w,\d]*$')
 
 
-class PyMongoModel:
+class PyMongoDAO:
     def __init__(self, collectionObj) -> None:
         self.collectionObj = collectionObj
 
@@ -38,7 +38,7 @@ class PyMongoModel:
         return res
 
 
-class UserModel(PyMongoModel):
+class UserDAO(PyMongoDAO):
     def __init__(self):
         super().__init__(pyMongoConnection.getDBCollection("notebookDB", "USER"))
 
@@ -47,6 +47,6 @@ class UserModel(PyMongoModel):
         return self.filterUselessFields(resUser)
 
 
-class NoteModel(PyMongoModel):
+class NoteDAO(PyMongoDAO):
     def __init__(self):
         super().__init__(pyMongoConnection.getDBCollection("notebookDB", "NOTE"))
