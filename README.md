@@ -1,3 +1,11 @@
+> 本项目技术栈：
+> * django2.0.5
+> * Python3.6.3  +  pip 9.0.1
+> * pymongo 3.6.1
+> * mongoengine 0.15.0
+> * cx-Oracle 6.3.1
+> * instantclient_11_2 【这里去[这里下载](http://www.oracle.com/technetwork/database/database-technologies/instant-client/overview/index.html)，然后解压，然后将目录加进环境变量`Path`中即可】
+
 ## 安装Django
 * 前提：已经装了Python
   ```
@@ -104,10 +112,11 @@
   1. 导入：`from django.views.decorators.csrf import csrf_exempt`
   2. 在对应的服务端方法头上加上注解：`@csrf_exempt`
 * 注意：在使用Oracle数据库时，要:
-  1. 先保证`pip install cx_Oracle`
-  2. 保证有64位并且版本大于等于11.2的 `instantclient-basic` 并配置好了环境变量（将其目录扔到`Path`中）
+  1. 先保证`pip install cx_Oracle`【现在应该是6.3版本】
+  2. 保证有64位并且版本大于等于11.2的 `instantclient-basic` 并配置好了环境变量（将其目录扔到`Path`中）【这是 oracle client】
   3. 重启Oracle 和 PyCharm
-
+     ![](./img/issue_3.png)
+  4. 执行`python manage.py makemigrations` ，成功创建`0001_initial.py`文件，OK，完成。
 
 ## 参考文章
 * [Django官方文档](https://docs.djangoproject.com/zh-hans/2.0/intro/tutorial01/)
