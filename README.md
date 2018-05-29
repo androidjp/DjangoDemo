@@ -1,10 +1,11 @@
 > 本项目技术栈：
 > * django2.0.5
 > * Python3.6.3  +  pip 9.0.1
-> * pymongo 3.6.1
-> * mongoengine 0.15.0
+> * pymongo 3.6.1【更原生】
+> * mongoengine 0.15.0【更贴近 Django models格式】
+> * Oracle 10g
 > * cx-Oracle 6.3.1
-> * instantclient_11_2 【这里去[这里下载](http://www.oracle.com/technetwork/database/database-technologies/instant-client/overview/index.html)，然后解压，然后将目录加进环境变量`Path`中即可】
+> * instantclient_11_2 64位 【这里去[这里下载](http://www.oracle.com/technetwork/database/database-technologies/instant-client/overview/index.html)，然后解压，然后将目录加进环境变量`Path`中即可】
 
 ## 安装Django
 * 前提：已经装了Python
