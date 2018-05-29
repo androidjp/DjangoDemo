@@ -7,6 +7,11 @@
 > * cx-Oracle 6.3.1
 > * instantclient_11_2 64位 【这里去[这里下载](http://www.oracle.com/technetwork/database/database-technologies/instant-client/overview/index.html)，然后解压，然后将目录加进环境变量`Path`中即可】
 
+> 目前已经实现了：项目同时连接Oracle 10g和MongoDB。
+  - `oracle_module`:用Django自带models实现了Oracle 10g 本地连接和 查、增 操作。
+  - `mongo_module`: 用`pyMongo`和`Mongoengine`两个库分别连接MongoDB，进行 查、增 操作。
+  - `polls`：官网教程项目（部分版），默认是连接 sqlite3 的。
+  
 ## 安装Django
 * 前提：已经装了Python
   ```
@@ -73,12 +78,6 @@
   * `NAME`
     * 数据库名称，`默认值 os.path.join(BASE_DIR, 'db.sqlite3')` 将会把数据库文件储存在项目的根目录
   * `USER`,`PASSWORD`,`HOST`等可选的配置
-
-
-
-
-
-
 
 ## 请求和页面跳转
 
